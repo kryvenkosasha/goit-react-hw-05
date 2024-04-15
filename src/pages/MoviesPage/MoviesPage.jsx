@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useSearchParams } from "react-router-dom";
-import TrendingMovies from "../../Components/TrendingMovies/TrendingMovies";
+import TrendingMovies from "../../components/TrendingMovies/TrendingMovies";
 import './MoviesPage.css'
 
 export default function MoviesPage() {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios"; 
 
-import TrendingMovies from '../../Components/TrendingMovies/TrendingMovies'
+import TrendingMovies from '../../components/TrendingMovies/TrendingMovies'
 
 const HomePage = () => {
 const [movies, setMovies] = useState([]);
