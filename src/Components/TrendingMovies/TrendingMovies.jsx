@@ -15,9 +15,7 @@ const TrendingMovies = (movies) => {
               <p>Rating: {movie.vote_average}</p>
             </NavLink> 
 
-             <Routes>
-              <Route path="/movies/${movie.id}" element={<div>dfpm;vc</div>} />
-            </Routes>
+             
           </li>
         ))}
       </ul>
