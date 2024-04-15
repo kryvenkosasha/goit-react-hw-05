@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
+import { useParams, NavLink, Outlet } from "react-router-dom";
+import axios from "axios";
 
 export default function MovieDetailsPage() {
   const [movie, setMovie] = useState([]);
+  const { movieId } = useParams();
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
@@ -26,42 +29,32 @@ export default function MovieDetailsPage() {
   }, [movieId]);
 
   return (
-    <div >
-
-      <div >
+    <div>
+      <div>
         <img
           src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
           alt={movie.title}
-          className={css["img-movie"]}
         />
-        <div >
+        <div>
           <h2>{movie.title}</h2>
-          <div >
-            <p >Overview</p>
+          <div>
+            <p>Overview</p>
             <p>{movie.overview}</p>
           </div>
           <p>
-            <span >Average rating:</span>{" "}
+            Average rating:
             {movie.vote_average ? movie.vote_average.toFixed(1) : "N/A"}
           </p>
 
           <p>
-            <span className={css["release-title"]}>Release Date:</span>{" "}
+            Release Date:
             {movie.release_date}
           </p>
         </div>
       </div>
-      <div >
-        <NavLink
-          to={`/movies/${movieId}/cast`}
-        >
-          Cast
-        </NavLink>
-        <NavLink
-          to={`/movies/${movieId}/reviews`}
-        >
-          Reviews
-        </NavLink>
+      <div>
+        <NavLink to={`/movies/${movieId}/cast`}>Cast</NavLink>
+        <NavLink to={`/movies/${movieId}/reviews`}>Reviews</NavLink>
       </div>
       <Outlet />
     </div>
