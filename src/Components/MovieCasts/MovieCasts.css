@@ -1,0 +1,11 @@
+.casts-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.casts-item {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #111;
+}

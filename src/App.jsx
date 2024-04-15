@@ -5,6 +5,9 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import MovieDetailsPage from "./pages/MovieDetailsPage/MovieDetailsPage.jsx";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage.jsx";
+import MoviesPage from "./pages/MoviesPage/MoviesPage.jsx";
+import MovieCast from "./Components/MovieCasts/MovieCasts.jsx";
+import MovieReviews from "./Components/MovieReviews/MovieReviews.jsx";
 
 function App() {
   return (
@@ -13,10 +16,10 @@ function App() {
 
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/movies" element={<div>movies page</div>} />
+        <Route path="/movies" element={<MoviesPage />} />
         <Route path="/movies/:movieId" element={<MovieDetailsPage />}>
-          <Route path="cast" element={<div>cast</div>} />
-          <Route path="reviews" element={<div>reviews</div>} />
+          <Route path="cast" element={<MovieCast />} />
+          <Route path="reviews" element={<MovieReviews />} />
         </Route>
         <Route path="*" element={<NotFoundPage />}></Route>
       </Routes>

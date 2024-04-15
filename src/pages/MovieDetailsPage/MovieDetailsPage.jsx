@@ -1,10 +1,18 @@
-import { useEffect, useState } from "react";
-import { useParams, NavLink, Outlet } from "react-router-dom";
+import { useEffect, useState, useRef } from "react";
+import {
+  useParams,
+  NavLink,
+  Outlet,
+  Link,
+  useLocation,
+} from "react-router-dom";
 import axios from "axios";
 
 export default function MovieDetailsPage() {
   const [movie, setMovie] = useState([]);
   const { movieId } = useParams();
+  const location = useLocation();
+  const backLinkRef = useRef(null);
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
@@ -28,8 +36,21 @@ export default function MovieDetailsPage() {
     fetchMovieDetails();
   }, [movieId]);
 
+  useEffect(() => {
+    if (backLinkRef.current) {
+      backLinkRef.current.focus();
+    }
+  }, [location]);
+
   return (
     <div>
+      <Link
+        to={location.state?.from || "/movies"}
+        ref={backLinkRef}
+        className="button"
+      >
+        Back
+      </Link>
       <div>
         <img
           src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
@@ -53,8 +74,12 @@ export default function MovieDetailsPage() {
         </div>
       </div>
       <div>
-        <NavLink to={`/movies/${movieId}/cast`}>Cast</NavLink>
-        <NavLink to={`/movies/${movieId}/reviews`}>Reviews</NavLink>
+        <NavLink to={`/movies/${movieId}/cast`} className="button">
+          Cast
+        </NavLink>
+        <NavLink to={`/movies/${movieId}/reviews`} className="button">
+          Reviews
+        </NavLink>
       </div>
       <Outlet />
     </div>

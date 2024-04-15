@@ -1,0 +1,12 @@
+.reviews-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.reviews-item {
+  max-width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #111;
+}

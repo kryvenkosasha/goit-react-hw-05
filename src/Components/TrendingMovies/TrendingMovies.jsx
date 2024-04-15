@@ -1,11 +1,12 @@
-import { NavLink, Routes, Router, Route } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import './TrendingMovies.css'
 
 const TrendingMovies = (movies) => {
   return (
     <div>
-      <ul>
+      <ul className="trending-movies-list">
         {movies.movies.map((movie) => (
-          <li key={movie.id}>
+          <li key={movie.id} className="trending-movies-item">
             <NavLink to={`/movies/${movie.id}`}>
               <img
                 src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
