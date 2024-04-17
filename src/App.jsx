@@ -9,7 +9,7 @@ const MoviesPage = lazy(() => import("./pages/MoviesPage/MoviesPage.jsx"));
 const MovieDetailsPage = lazy(() =>
   import("./pages/MovieDetailsPage/MovieDetailsPage")
 );
-const MovieCast = lazy(() => import("./components/MovieCasts/MovieCasts.jsx"));
+const MovieCast = lazy(() => import("./components/MovieCast/MovieCast.jsx"));
 const MovieReviews = lazy(() =>
   import("./components/MovieReviews/MovieReviews.jsx")
 );
@@ -19,7 +19,7 @@ function App() {
     <>
       <Navigation />
 
-      <Suspense>
+      <Suspense fallback={<p>Loading...</p>}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/movies" element={<MoviesPage />} />

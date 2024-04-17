@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import axios from "axios"; 
+import axios from "axios";
 
-import TrendingMovies from '../../components/TrendingMovies/TrendingMovies'
+import TrendingMovies from "../../components/MovieList/MovieList";
 
 const HomePage = () => {
-const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -37,4 +37,4 @@ const [movies, setMovies] = useState([]);
   );
 };
 
-export default HomePage
+export default HomePage;

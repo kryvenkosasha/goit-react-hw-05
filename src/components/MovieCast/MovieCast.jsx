@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import './MovieCasts.css'
+import './MovieCast.css'
 
 export default function MovieCast() {
   const [cast, setCast] = useState([]);

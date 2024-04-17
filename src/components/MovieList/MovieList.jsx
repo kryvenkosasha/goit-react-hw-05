@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import './TrendingMovies.css'
+import './MovieList.css'
 
 const TrendingMovies = (movies) => {
   return (

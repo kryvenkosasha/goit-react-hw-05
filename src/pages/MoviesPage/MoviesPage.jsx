@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useSearchParams } from "react-router-dom";
-import TrendingMovies from "../../components/TrendingMovies/TrendingMovies";
-import './MoviesPage.css'
+import TrendingMovies from "../../components/MovieList/MovieList";
+import "./MoviesPage.css";
 
 export default function MoviesPage() {
   const [movies, setMovies] = useState([]);
@@ -36,7 +36,7 @@ export default function MoviesPage() {
     } catch (error) {
       setError(error.message);
     } finally {
-    //   setLoading(false);
+      //   setLoading(false);
     }
   };
 
@@ -51,7 +51,7 @@ export default function MoviesPage() {
 
   return (
     <div>
-      <form onSubmit={handleFormSubmit} >
+      <form onSubmit={handleFormSubmit}>
         <input
           type="text"
           value={searchQuery}
